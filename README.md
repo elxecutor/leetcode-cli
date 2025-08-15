@@ -25,6 +25,28 @@ A comprehensive, feature-rich terminal-based CLI tool for LeetCode. View profile
 - 📊 **JSON Output**: Perfect for scripting and automation
 
 ## 🛠 Installation
+## ▶️ How to Run
+
+After installing, you can run the CLI as a Python module:
+
+```bash
+python3 -m leetcode_cli [command] [options]
+```
+
+For example:
+```bash
+python3 -m leetcode_cli profile elxecutor
+python3 -m leetcode_cli daily
+python3 -m leetcode_cli search "two sum"
+python3 -m leetcode_cli submit two-sum examples/two_sum.py --lang python3
+```
+
+You do not need to install any separate `leetcode` command. All usage examples in this README should be run by replacing `leetcode` with `python3 -m leetcode_cli`.
+
+You can also run any example or test script directly:
+```bash
+python3 examples/demo.py
+```
 
 ### From Source
 
@@ -63,34 +85,34 @@ sudo pacman -S chafa
 
 ```bash
 # View a user's profile
-leetcode profile octocat
+python3 -m leetcode_cli profile elxecutor
 
 # Get today's daily challenge
-leetcode daily
+python3 -m leetcode_cli daily
 
 # Search for problems
-leetcode search "two sum"
+python3 -m leetcode_cli search "two sum"
 
 # View specific problem details
-leetcode problem two-sum
+python3 -m leetcode_cli problem two-sum
 
 # Submit a solution (requires authentication)
-leetcode submit two-sum examples/two_sum.py --lang python3
+python3 -m leetcode_cli submit two-sum examples/two_sum.py --lang python3
 
 # Run tests without submitting
-leetcode test two-sum examples/two_sum.py --lang python3
+python3 -m leetcode_cli test two-sum examples/two_sum.py --lang python3
 
 # View submission history
-leetcode submissions your-username --status accepted --lang python3
+python3 -m leetcode_cli submissions elxecutor --status accepted --lang python3
 
 # Display statistics with heatmap
-leetcode stats your-username --heatmap
+python3 -m leetcode_cli stats elxecutor --heatmap
 
 # Start interactive TUI mode
-leetcode tui
+python3 -m leetcode_cli tui
 
 # Get help
-leetcode --help
+python3 -m leetcode_cli --help
 ```
 
 ### Demo Script
@@ -107,7 +129,7 @@ python3 examples/demo.py [username]
 To submit solutions and access personalized features:
 
 ```bash
-leetcode login
+python3 -m leetcode_cli login
 ```
 
 ## 📖 Commands
@@ -124,7 +146,7 @@ Display comprehensive user profile information including:
 ```bash
 # Examples
 leetcode profile leetcode
-leetcode profile your-username --json
+leetcode profile elxecutor --json
 ```
 
 ### `daily`
@@ -206,16 +228,16 @@ View and filter submission history:
 
 ```bash
 # View recent submissions
-leetcode submissions your-username
+leetcode submissions elxecutor
 
 # Filter by problem
-leetcode submissions your-username --problem two-sum
+leetcode submissions elxecutor --problem two-sum
 
 # Filter by status
-leetcode submissions your-username --status accepted
+leetcode submissions elxecutor --status accepted
 
 # Filter by language
-leetcode submissions your-username --lang python3 --limit 50
+leetcode submissions elxecutor --lang python3 --limit 50
 ```
 
 ### `stats USERNAME`
@@ -224,13 +246,13 @@ Display comprehensive statistics:
 
 ```bash
 # Basic statistics
-leetcode stats your-username
+leetcode stats elxecutor
 
 # Show activity heatmap
-leetcode stats your-username --heatmap
+leetcode stats elxecutor --heatmap
 
 # Show interactive progress bars
-leetcode stats your-username --progress
+leetcode stats elxecutor --progress
 ```
 
 ### `tui`
